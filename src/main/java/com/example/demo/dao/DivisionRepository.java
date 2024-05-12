@@ -1,0 +1,10 @@
+package com.example.demo.dao;
+
+import com.example.demo.entity.Division;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public interface DivisionRepository extends JpaRepository<Division, Long> {
+    // Add any custom query methods if needed
+}
