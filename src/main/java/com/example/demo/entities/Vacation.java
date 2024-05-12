@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -21,16 +21,15 @@ public class Vacation {
     @Column(name = "vacation_id")
     private Long id;
 
-    @CreationTimestamp
-    @Column(name = "create_date")
-    private Date createDate;
+    @Column(name = "vacation_title")
+    private String vacation_title;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "image_url")
-    @JsonProperty("image_URL")
-    private String imageURL;
+    @CreationTimestamp
+    @Column(name = "create_date")
+    private Date createDate;
 
     @UpdateTimestamp
     @Column(name = "last_update")
@@ -38,10 +37,11 @@ public class Vacation {
 
     @Column(name = "travel_fare_price")
     @JsonProperty("travel_price")
-    private BigDecimal travelPrice;
+    private BigDecimal travel_price;
 
-    @Column(name = "vacation_title")
-    private String vacationTitle;
+    @Column(name = "image_url")
+    @JsonProperty("image_URL")
+    private String image_URL;
 
     @OneToMany(mappedBy = "vacation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Excursion> excursions;

@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,32 +23,37 @@ public class Customer {
     @Column(name = "customer_id")
     private Long id;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "customer_first_name")
+    private String firstName;
+
+    @Column(name = "postal_code")
+    private String postal_code;
+
+    @Column(name = "phone")
+    private String phone;
 
     @CreationTimestamp
     @Column(name = "create_date")
     private Date create_date;
-    @Column(name = "customer_first_name")
-    private String firstName;
-
-    @Column(name = "customer_last_name")
-    private String lastName;
 
     @UpdateTimestamp
     @Column(name = "last_update")
     private Date last_update;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "customer_last_name")
+    private String lastName;
 
-    @Column(name = "postal_code")
-    private String postalCode;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "division_id")
-    private Division division;
+    @Column(name = "address")
+    private String address;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Cart> carts;
+
+    @ManyToOne
+    @JoinColumn(name = "division_id")
+    private Division division;
+
+    public void add(Cart cart) {
+        this.carts.add(cart);
+    }
 }

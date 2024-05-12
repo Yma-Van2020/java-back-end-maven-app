@@ -1,9 +1,11 @@
-package com.example.demo.entity;
+package com.example.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -19,27 +21,29 @@ public class Excursion {
     @Column(name = "excursion_id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "create_date")
-    private Date createDate;
-
-    @Column(name = "excursion_price")
-    private BigDecimal excursionPrice;
+    @Column(name = "image_url")
+    @JsonProperty("image_URL")
+    private String image_URL;
 
     @Column(name = "excursion_title")
     @JsonProperty("excursion_title")
-    private String excursionTitle;
+    private String excursion_title;
 
-    @Column(name = "image_url")
-    @JsonProperty("image_URL")
-    private String imageURL;
+    @Column(name = "excursion_price")
+    private BigDecimal excursion_price;
 
+    @CreationTimestamp
+    @Column(name = "create_date")
+    private Date create_date;
+
+    @UpdateTimestamp
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private Date last_update;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vacation_id")
     private Vacation vacation;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "excursions", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "excursions")
     private Set<CartItem> cartItems;
 }

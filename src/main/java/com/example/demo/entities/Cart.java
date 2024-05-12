@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -20,18 +21,18 @@ public class Cart {
     @Column(name = "cart_id")
     private Long id;
 
-    @Column(name = "package_price")
-    private BigDecimal packagePrice;
-
-    @Column(name = "party_size")
-    private int partySize;
+    @Column(name = "order_tracking_number")
+    private String orderTrackingNumber;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private StatusType status;
 
-    @Column(name = "order_tracking_number")
-    private String orderTrackingNumber;
+    @Column(name = "package_price")
+    private BigDecimal package_price;
+
+    @Column(name = "party_size")
+    private int party_size;
 
     @CreationTimestamp
     @Column(name = "create_date")
@@ -46,5 +47,9 @@ public class Cart {
     private Customer customer;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<CartItem> cartItems;
+    private Set<CartItem> cartItem = new HashSet<>();
+
+    public void add(CartItem cartItem) {
+        this.cartItem.add(cartItem);
+    }
 }

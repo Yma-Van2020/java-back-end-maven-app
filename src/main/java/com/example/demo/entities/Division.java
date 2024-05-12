@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,12 +19,12 @@ import java.util.Set;
 @AllArgsConstructor
 public class Division {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "division_id")
     private Long id;
 
     @Column(name = "division")
-    private String division;
+    private String division_name;
 
     @CreationTimestamp
     @Column(name = "create_date")
@@ -32,17 +32,17 @@ public class Division {
 
     @UpdateTimestamp
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private Date last_update;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id", nullable = false, insertable = false, updatable = false)
-    private Country country;
+    @Column(name = "country_id", insertable = false, updatable = false)
+    private Long countryID;
 
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Customer> customers;
 
-    @Column(name = "country_id", insertable = false, updatable = false)
-    private Long countryID;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 
     public void setCountry(Country country) {
         this.country = country;
