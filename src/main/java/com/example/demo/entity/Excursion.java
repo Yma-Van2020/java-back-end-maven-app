@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,9 +26,11 @@ public class Excursion {
     private BigDecimal excursionPrice;
 
     @Column(name = "excursion_title")
+    @JsonProperty("excursion_title")
     private String excursionTitle;
 
     @Column(name = "image_url")
+    @JsonProperty("image_URL")
     private String imageURL;
 
     @Column(name = "last_update")
