@@ -1,8 +1,12 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 import java.util.Set;
@@ -11,26 +15,29 @@ import java.util.Set;
 @Table(name = "customers")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private long id;
+    private Long id;
 
     @Column(name = "address")
     private String address;
 
+    @CreationTimestamp
     @Column(name = "create_date")
-    private Date createDate;
-
+    private Date create_date;
     @Column(name = "customer_first_name")
     private String firstName;
 
     @Column(name = "customer_last_name")
     private String lastName;
 
+    @UpdateTimestamp
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private Date last_update;
 
     @Column(name = "phone")
     private String phone;
@@ -42,10 +49,6 @@ public class Customer {
     @JoinColumn(name = "division_id")
     private Division division;
 
-    public Customer() {
-    }
-
-    public void setCountry(Division division) {
-        this.division = division;
-    }
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Cart> carts;
 }

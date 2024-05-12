@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,8 +18,9 @@ public class Vacation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vacation_id")
-    private long id;
+    private Long id;
 
+    @CreationTimestamp
     @Column(name = "create_date")
     private Date createDate;
 
@@ -27,6 +30,7 @@ public class Vacation {
     @Column(name = "image_url")
     private String imageURL;
 
+    @UpdateTimestamp
     @Column(name = "last_update")
     private Date lastUpdate;
 
@@ -38,7 +42,4 @@ public class Vacation {
 
     @OneToMany(mappedBy = "vacation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Excursion> excursions;
-
-    public Vacation() {
-    }
 }

@@ -15,8 +15,8 @@ import java.util.Set;
 public class Excursion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "excursion_id")
-    private long id;
+    @Column(name = "excursion_id", nullable = false, updatable = false)
+    private Long id;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -39,7 +39,4 @@ public class Excursion {
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "excursions", fetch = FetchType.LAZY)
     private Set<CartItem> cartItems;
-
-    public Excursion() {
-    }
 }

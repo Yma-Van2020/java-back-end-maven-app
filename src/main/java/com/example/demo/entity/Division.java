@@ -1,8 +1,12 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 import java.util.Set;
@@ -11,18 +15,22 @@ import java.util.Set;
 @Table(name = "divisions")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "division_id")
-    private long id;
+    private Long id;
 
     @Column(name = "division")
     private String division;
 
+    @CreationTimestamp
     @Column(name = "create_date")
     private Date createDate;
 
+    @UpdateTimestamp
     @Column(name = "last_update")
     private Date lastUpdate;
 
@@ -33,10 +41,11 @@ public class Division {
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Customer> customers;
 
-    public Division() {
-    }
+    @Column(name = "country_id", insertable = false, updatable = false)
+    private Long countryID;
 
     public void setCountry(Country country) {
         this.country = country;
+        this.countryID = (country != null) ? country.getId() : null;
     }
 }

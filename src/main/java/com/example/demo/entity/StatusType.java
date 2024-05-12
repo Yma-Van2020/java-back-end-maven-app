@@ -1,8 +1,8 @@
 package com.example.demo.entity;
 
 public enum StatusType {
-    PENDING,
-    ORDERED,
-    CANCELED
+    pending,
+    ordered,
+    cancelled
 }
 
