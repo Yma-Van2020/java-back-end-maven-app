@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="d288-back-end-programming" target="17" />
+      <module name="d288-back-end-programming" target="20" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
