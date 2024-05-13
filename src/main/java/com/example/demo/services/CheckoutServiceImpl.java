@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import com.example.demo.dao.CartItemRepository;
+import com.example.demo.dao.CartRepository;
 import com.example.demo.dao.CustomerRepository;
 import com.example.demo.entities.Cart;
 import com.example.demo.entities.CartItem;
@@ -15,8 +17,14 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
 
-    public CheckoutServiceImpl(CustomerRepository customerRepository) {
+    private CartRepository cartRepository;
+
+    private CartItemRepository cartItemRepository;
+
+    public CheckoutServiceImpl(CustomerRepository customerRepository, CartRepository cartRepository, CartItemRepository cartItemRepository) {
         this.customerRepository = customerRepository;
+        this.cartRepository = cartRepository;
+        this.cartItemRepository = cartItemRepository;
     }
 
     @Override
@@ -35,6 +43,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         // Populate cart with cartItems
         cartItems.forEach(cartItem -> {
             cart.add(cartItem);
+            cartItem.setCart(cart);
         });
 
         // populate customer with cart
@@ -42,6 +51,8 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // save to the db
         customerRepository.save(customer);
+        cartRepository.save(cart);
+        cartItemRepository.saveAll(cartItems);
 
         // return a response
         return new PurchaseResponse(orderTrackingNumber);
