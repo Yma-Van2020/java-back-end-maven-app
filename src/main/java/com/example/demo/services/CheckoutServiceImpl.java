@@ -34,9 +34,14 @@ public class CheckoutServiceImpl implements CheckoutService {
         Customer customer = purchase.getCustomer();
         Set<CartItem> cartItems = purchase.getCartItems();
 
+        if (cart == null || cartItems == null || cartItems.isEmpty()) {
+            return new PurchaseResponse("Cart or cart items cannot be null or empty. Please provide valid data.");
+        }
+
         String orderTrackingNumber = UUID.randomUUID().toString();
         cart.setOrderTrackingNumber(orderTrackingNumber);
         cart.setStatus(StatusType.ordered);
+
         cartItems.forEach(cartItem -> {
             cart.add(cartItem);
             cartItem.setCart(cart);
