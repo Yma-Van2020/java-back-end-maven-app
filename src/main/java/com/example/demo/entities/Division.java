@@ -34,18 +34,18 @@ public class Division {
     @Column(name = "last_update")
     private Date last_update;
 
-    @Column(name = "country_id", insertable = false, updatable = false)
-    private Long countryID;
+    @Column(name = "Country_ID")
+    private Long country_id;
 
     @OneToMany(mappedBy = "division", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Customer> customers;
 
-    @ManyToOne
-    @JoinColumn(name = "country_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Country_ID", nullable = false, insertable = false, updatable = false)
     private Country country;
 
     public void setCountry(Country country) {
+        setCountry_id(country.getId());
         this.country = country;
-        this.countryID = (country != null) ? country.getId() : null;
     }
 }
