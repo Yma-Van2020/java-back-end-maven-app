@@ -36,7 +36,7 @@ public class Customer {
     @NotBlank(message = "Postal code is required")
     @Size(min = 5, max = 10, message = "Postal code must be between 5 and 10 characters")
     @Column(name = "postal_code", nullable = false)
-    private String postalCode;
+    private String postal_code;
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "\\(\\d{3}\\)\\d{3}-\\d{4}", message = "Phone number must be in the format (555)555-5555")
