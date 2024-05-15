@@ -22,4 +22,10 @@ If you need additional support, please navigate to the course page and reach out
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
 
 ![Screenshot 2024-05-12 at 8 37 39 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/e130a906-2792-418a-9ad9-1fe28a49df80)
-[project pictures (1).pdf](https://github.com/Yma-Van2020/Java-Back-end-programming/files/15289112/project.pictures.1.pdf)
+![Screenshot 2024-05-15 at 3 43 05 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/f7406478-f37f-49e2-8335-3d68f57e1b84)
+![Screenshot 2024-05-15 at 3 43 13 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/4bcb4cf2-9455-4614-aec8-5fbaebb832e8)
+![Screenshot 2024-05-15 at 3 43 22 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/24249960-b92a-477a-9d32-13189dd71a1b)
+![Screenshot 2024-05-15 at 3 43 28 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/f808fe7d-bed0-43ab-b438-5f8902bdad44)
+![Screenshot 2024-05-15 at 3 43 39 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/4ba34ab7-a7a7-4d06-91ad-a17dc71f3e57)
+![Screenshot 2024-05-15 at 3 43 47 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/ffe4a12a-2368-45bd-8e84-8f0789ac0bee)
+![Screenshot 2024-05-15 at 3 44 54 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/8f9a168e-d300-48ee-b870-ec147edba82f)
