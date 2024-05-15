@@ -21,7 +21,7 @@ If you need additional support, please navigate to the course page and reach out
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
 
-![Screenshot 2024-05-15 at 3 42 56 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/7cd6c5a2-fc6a-45b0-8fe7-d803e4ebf2dc)
+Demo pictures:
 ![Screenshot 2024-05-15 at 3 43 05 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/f7406478-f37f-49e2-8335-3d68f57e1b84)
 ![Screenshot 2024-05-15 at 3 43 13 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/4bcb4cf2-9455-4614-aec8-5fbaebb832e8)
 ![Screenshot 2024-05-15 at 3 43 22 PM](https://github.com/Yma-Van2020/Java-Back-end-programming/assets/74885386/24249960-b92a-477a-9d32-13189dd71a1b)
