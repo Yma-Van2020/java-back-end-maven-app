@@ -25,7 +25,7 @@ public class BootstrapData {
             Customer customer1 = new Customer();
             customer1.setFirstName("Alice");
             customer1.setLastName("Johnson");
-            customer1.setPostalCode("54321");
+            customer1.setPostal_code("54321");
             customer1.setAddress("123 Main St");
             customer1.setPhone("(555)123-4567");
             customer1.setDivision(divisionRepository.findAll().get(0));
@@ -35,7 +35,7 @@ public class BootstrapData {
             Customer customer2 = new Customer();
             customer2.setFirstName("Bob");
             customer2.setLastName("Smith");
-            customer2.setPostalCode("98765");
+            customer2.setPostal_code("98765");
             customer2.setAddress("456 Elm St");
             customer2.setPhone("(555)987-6543");
             customer2.setDivision(divisionRepository.findAll().get(1));
@@ -45,7 +45,7 @@ public class BootstrapData {
             Customer customer3 = new Customer();
             customer3.setFirstName("Charlie");
             customer3.setLastName("Brown");
-            customer3.setPostalCode("13579");
+            customer3.setPostal_code("13579");
             customer3.setAddress("789 Oak St");
             customer3.setPhone("(555)246-8013");
             customer3.setDivision(divisionRepository.findAll().get(2));
@@ -55,7 +55,7 @@ public class BootstrapData {
             Customer customer4 = new Customer();
             customer4.setFirstName("David");
             customer4.setLastName("Miller");
-            customer4.setPostalCode("24680");
+            customer4.setPostal_code("24680");
             customer4.setAddress("101 Pine St");
             customer4.setPhone("(555)369-1470");
             customer4.setDivision(divisionRepository.findAll().get(3));
@@ -65,7 +65,7 @@ public class BootstrapData {
             Customer customer5 = new Customer();
             customer5.setFirstName("Eva");
             customer5.setLastName("Wilson");
-            customer5.setPostalCode("86420");
+            customer5.setPostal_code("86420");
             customer5.setAddress("202 Cedar St");
             customer5.setPhone("(555)258-0369");
             customer5.setDivision(divisionRepository.findAll().get(4));
