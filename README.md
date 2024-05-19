@@ -15,7 +15,7 @@ This project is a modernized back-end system for a travel agency's vacation book
 - **GitLab**: Version control and repository hosting
 
 ### A. GitLab Repository Setup
-- The project is hosted on GitLab. [here]([https://gitlab.com/wgu-gitlab-environment/student-repos/yma14/d387-advanced-java.git](https://gitlab.com/wgu-gitlab-environment/student-repos/yma14/d288-back-end-programming.git)) 
+- The project is hosted on GitLab. [here](https://gitlab.com/wgu-gitlab-environment/student-repos/yma14/d288-back-end-programming.git) 
 - working_branch's branch history and commit messages are available upon request.
 
 ## Project Structure
