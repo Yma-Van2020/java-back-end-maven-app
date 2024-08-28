@@ -14,10 +14,6 @@ This project is a modernized back-end system for a travel agency's vacation book
 - **Lombok**: Java library for boilerplate code reduction
 - **GitLab**: Version control and repository hosting
 
-### A. GitLab Repository Setup
-- The project is hosted on GitLab. [here](https://gitlab.com/wgu-gitlab-environment/student-repos/yma14/d288-back-end-programming.git) 
-- working_branch's branch history and commit messages are available upon request.
-
 ## Project Structure
 
 The project is structured into several packages:
